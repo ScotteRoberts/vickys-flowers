@@ -19,7 +19,7 @@ const Cart = props => {
 
   return (
     <div className="cart">
-      TOTAL AMOUNT: $<span>{totalAmount}</span> |{' '}
+      TOTAL AMOUNT: $<span>{totalAmount.toFixed(2)}</span> |{' '}
       <div ref={drop} className="cart-icon-container">
         <span className="total-items">{totalItems}</span>
         <img
