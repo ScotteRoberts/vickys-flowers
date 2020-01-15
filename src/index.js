@@ -2,6 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './main.css';
 import App from './components/app';
-import 'es6-symbol';
+import 'babel-polyfill';
 
 ReactDOM.render(<App />, document.getElementById('root'));
