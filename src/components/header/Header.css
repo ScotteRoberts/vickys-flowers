@@ -19,12 +19,12 @@
 }
 
 .header nav a {
-  margin: 0 1rem;
+  margin: 0 2rem 0 0;
 
   text-decoration: none;
 
   color: #ffffff;
-  font-weight: 600px;
+  font-weight: 600;
 }
 
 .header nav a:hover {

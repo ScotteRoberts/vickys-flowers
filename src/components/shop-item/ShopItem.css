@@ -1,0 +1,23 @@
+.shop-item {
+  margin: 2rem 0.5rem;
+}
+
+.shop-item > * {
+  text-align: center;
+}
+
+.shop-item .item-title {
+  font-size: 1.07rem;
+  font-weight: 600;
+}
+
+.shop-item .item-price {
+  color: #d33169;
+  font-weight: 700;
+}
+
+.shop-item .item-quantity {
+  display: block;
+  width: 75px;
+  margin: 0 auto;
+}
