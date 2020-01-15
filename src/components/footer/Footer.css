@@ -1,0 +1,36 @@
+/* FIXME: Check this whole file later */
+
+.footer {
+  padding: 46px 0 27px 0;
+
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  text-align: center;
+  background-color: #28425a;
+}
+
+.footer nav {
+  display: flex;
+  flex-flow: column;
+}
+
+.footer nav h3 {
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+  color: #d33169;
+}
+
+/* HACK: This is a bit of a hack to grab the 'a' tag... consider making a custom component */
+.footer nav a {
+  font-size: 0.875rem;
+  margin: 0 0 1rem 0;
+
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer nav a:hover {
+  text-decoration: underline;
+}
