@@ -4,3 +4,19 @@
 
   font-weight: 600;
 }
+
+.cart-icon-container {
+  position: relative;
+}
+
+.cart-icon--droppable {
+  background-color: green;
+}
+
+.total-items {
+  position: absolute;
+  left: 14px;
+  top: 4px;
+
+  color: #28425a;
+}
