@@ -22,3 +22,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@media only screen and (max-width: 1100px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* 900 requires a switch in navigation */

@@ -1,5 +1,7 @@
 .header {
+  position: fixed;
   padding: 0.25rem 5rem;
+  width: calc(100vw - 10rem);
 
   display: flex;
   align-items: center;
