@@ -15,8 +15,11 @@
 
 .total-items {
   position: absolute;
-  left: 14px;
-  top: 4px;
+  /* DEV: Placement of styling is done dynamically in the component */
 
   color: #28425a;
+}
+
+.tabbed-vertical-separator {
+  padding: 0 0.8rem;
 }
