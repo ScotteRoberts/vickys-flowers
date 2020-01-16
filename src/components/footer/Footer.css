@@ -4,7 +4,7 @@
   padding: 46px 5rem 27px 5rem;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
 
   text-align: center;
@@ -14,7 +14,7 @@
 .footer nav {
   display: flex;
   flex-flow: column;
-  margin: 0 1rem;
+  margin: 0 6rem;
 }
 
 .footer nav h3 {

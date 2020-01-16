@@ -33,13 +33,14 @@ const cartItemSize = numItems => {
 
 const Cart = props => {
   // FIXME: Figure out how to set this to decimal formatting
-  const [totalAmount, setTotalAmount] = useState(35);
-  const [totalItems, setTotalItems] = useState(1);
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
   const [{ canDrop }, drop] = useDrop({
     accept: 'flower',
     drop: item => {
       console.log(item);
       setTotalAmount(totalAmount + item.price * item.quantity);
+      console.log(totalAmount);
       setTotalItems(totalItems + item.quantity);
     },
     collect: monitor => ({ canDrop: !!monitor.canDrop() }),
