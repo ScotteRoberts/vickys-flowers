@@ -33,7 +33,7 @@ const ShopItem = ({ item }) => {
         src={image.src}
         // FIXME: Figure out how to spread the array instead of hard coding the indicies
         srcSet={(image.srcSet[0], image.srcSet[1])}
-        alt="Sunflower Melody item"
+        alt={image.alt}
       />
       <p className="item-title">{title}</p>
       <p className="item-price">${price.toFixed(2)}</p>
@@ -60,6 +60,7 @@ ShopItem.propTypes = {
     image: PropTypes.shape({
       src: PropTypes.string.isRequired,
       srcSet: PropTypes.arrayOf(PropTypes.string).isRequired,
+      alt: PropTypes.string,
     }).isRequired,
   }).isRequired,
 };

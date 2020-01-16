@@ -13,20 +13,20 @@ const cartItemSize = numItems => {
   if (numItems < 10) {
     return {
       fontSize: '16px',
-      left: '15px',
-      top: '4px',
+      left: '18px',
+      top: '13px',
     };
   } else if (numItems < 100) {
     return {
       fontSize: '14px',
-      left: '12px',
-      top: '5px',
+      left: '15px',
+      top: '15px',
     };
   } else {
     return {
       fontSize: '12px',
-      left: '10px',
-      top: '6px',
+      left: '13px',
+      top: '16px',
     };
   }
 };
@@ -34,7 +34,7 @@ const cartItemSize = numItems => {
 const Cart = props => {
   // FIXME: Figure out how to set this to decimal formatting
   const [totalAmount, setTotalAmount] = useState(35);
-  const [totalItems, setTotalItems] = useState(0);
+  const [totalItems, setTotalItems] = useState(1);
   const [{ canDrop }, drop] = useDrop({
     accept: 'flower',
     drop: item => {
@@ -51,15 +51,17 @@ const Cart = props => {
         TOTAL AMOUNT: $<span>{totalAmount.toFixed(2)}</span>
         <span className="tabbed-vertical-separator">|</span>
       </div>
-      <div ref={drop} className="cart-icon-container">
-        <span className="total-items" style={cartItemSize(totalItems)}>
-          {totalItems}
-        </span>
+      {/* FIXME: Change the drop target to the div later */}
+      <div className="cart-icon-container" ref={drop}>
+        <div className={`drop-target${canDrop ? ' droppable' : ''}`} />
         <img
           src={require('../../assets/img/page-1-2.svg')}
           alt="Cart icon"
-          className={`cart-icon${canDrop ? '--droppable' : ''}`}
+          className="cart-icon"
         />
+        <span className="total-items" style={cartItemSize(totalItems)}>
+          {totalItems}
+        </span>
       </div>
     </div>
   );
