@@ -18,7 +18,18 @@
 }
 
 .shop-item .item-quantity {
+  appearance: none;
+
   display: block;
   width: 75px;
+  height: 30px;
   margin: 0 auto;
+  padding: 0.25rem 0.5rem 0.25rem 1rem;
+
+  border: solid 1px #24435a;
+  border-radius: 0;
+  background: #ffffff url('../../assets/img/path-2.svg') no-repeat 90% center;
+
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8rem;
 }

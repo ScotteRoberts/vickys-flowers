@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700,800&display=swap');
 
 /* FIXME: Double check with Sam that you can use css variables */
-:root {
+/* :root {
   --grayish-brown: #4a4a4a;
   --pinkish-grey: #bdbdbd;
   --dark-grey-blue: #28425a;
   --dark-pink: #d33169;
   --white: #ffffff;
-}
+} */
 
 body {
   margin: 0;
