@@ -8,4 +8,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Screenshots
 
+### Page View
+
 ![Page screenshot](src/assets/img/page-screenshot.png)
+
+### Mobile View
+
+![Mobile screenshot](src/assets/img/mobile-screenshot.png)

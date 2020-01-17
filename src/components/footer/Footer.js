@@ -15,14 +15,14 @@ const Footer = () => (
       <Link to="media">Media</Link>
       <Link to="security-and-privacy">Security & Privacy</Link>
     </nav>
-    <nav className="footer__nav">
+    <nav>
       <h3>LEARN MORE ABOUT</h3>
       <Link to="blog">Blog</Link>
       <Link to="find-a-florist">Find a Florist</Link>
       <Link to="floral-tips-and-inspiration">Floral Tips & Inspiration</Link>
       <Link to="sitemap">Sitemap</Link>
     </nav>
-    <nav className="footer__nav">
+    <nav>
       <h3>SHOP VICKY'S</h3>
       <Link to="same-day-flower-delivery">Same-Day Flower Delivery</Link>
       <Link to="birthday-flowers">Birthday Flowers</Link>

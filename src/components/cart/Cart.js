@@ -13,13 +13,13 @@ const cartImage = require('../../assets/img/page-1-2.svg');
  * @param {Number} props.totalAmount Shopping cart total in $
  * @component
  */
-const CartDecription = ({ totalAmount }) => (
+const CartDescription = ({ totalAmount }) => (
   <div>
     TOTAL AMOUNT: <span>${totalAmount.toFixed(2)}</span>
     <span className="tabbed-vertical-separator">|</span>
   </div>
 );
-CartDecription.propTypes = {
+CartDescription.propTypes = {
   totalAmount: PropTypes.number.isRequired,
 };
 
@@ -89,7 +89,7 @@ const Cart = () => {
       {isCompact ? (
         <CompactCartDescription totalAmount={totalAmount} />
       ) : (
-        <CartDecription totalAmount={totalAmount} />
+        <CartDescription totalAmount={totalAmount} />
       )}
 
       {/* DEV: An overlaid container that has the shopping cart details stacked */}

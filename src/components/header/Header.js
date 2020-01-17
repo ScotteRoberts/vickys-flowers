@@ -15,6 +15,7 @@ const Header = () => {
   return (
     <header className="header">
       {isCompact ? <CompactNavBar /> : <NavBar />}
+      {/* Cart handles it's own media queries because the change in layout was not as drastic */}
       <Cart />
     </header>
   );

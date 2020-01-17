@@ -27,8 +27,9 @@ const NotFound = () => (
  * @component
  */
 const App = () => (
-  // DndProvider: The Drag and Drop library provider that determines which api (touch or desktop) should be used.
+  // DEV: DndProvider: The Drag and Drop library provider that determines which api (touch or desktop) should be used.
   <DndProvider backend={Backend}>
+    {/* DEV: The Router enables access to url matching and browser history info to do front-end navigation*/}
     <Router>
       <div className="app">
         <Header />
@@ -37,6 +38,7 @@ const App = () => (
             <Route exact path="/">
               <Shop />
             </Route>
+            {/* DEV: Fallback route */}
             <Route>
               <NotFound />
             </Route>
