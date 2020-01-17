@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useDrag } from 'react-dnd';
+import { useDrag, DragPreviewImage } from 'react-dnd';
 import './ShopItem.css';
 
 /** Array of Integers from 1 - 20 */
@@ -25,7 +25,7 @@ const ShopItem = ({ item }) => {
   const [currQuantity, setCurrQuantity] = useState(getRandomInt(1, 20));
 
   // DEV: Dragging hook to monitor the draggable item
-  const [, dragRef] = useDrag({
+  const [, dragRef, preview] = useDrag({
     item: { type: 'flower', price, quantity: currQuantity },
     end: (_, monitor) => {
       // Drop was successful, randomize the next quantity for the drop...
@@ -38,6 +38,7 @@ const ShopItem = ({ item }) => {
     setCurrQuantity(parseInt(event.target.value, 10));
   return (
     <div className="shop-item">
+      <DragPreviewImage connect={preview} src={image.src} />
       <img
         ref={dragRef}
         src={image.src}
