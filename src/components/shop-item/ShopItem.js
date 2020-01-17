@@ -18,13 +18,14 @@ const getRandomInt = (min, max) => Math.floor(Math.random() * max + min);
  * ShopItem component: Card-like representation of a single shop item
  * @param {*} props properties
  * @param {Object} props.item Shopping item details
+ * @component
  */
 const ShopItem = ({ item }) => {
   const { title, image, price } = item;
   const [currQuantity, setCurrQuantity] = useState(getRandomInt(1, 20));
 
   // DEV: Dragging hook to monitor the draggable item
-  const [{ isDragging }, dragRef] = useDrag({
+  const [, dragRef] = useDrag({
     item: { type: 'flower', price, quantity: currQuantity },
     end: (_, monitor) => {
       // Drop was successful, randomize the next quantity for the drop...
@@ -32,9 +33,6 @@ const ShopItem = ({ item }) => {
         setCurrQuantity(getRandomInt(1, 20));
       }
     },
-    collect: monitor => ({
-      isDragging: monitor.isDragging(),
-    }),
   });
   const handleQuantityChange = event =>
     setCurrQuantity(parseInt(event.target.value, 10));

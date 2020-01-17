@@ -9,7 +9,7 @@ import ShopItem from '../shop-item';
  * @component
  */
 const Shop = () => (
-  <main className="shop">
+  <div className="shop">
     <h1 className="title">Top Products</h1>
     <p className="subtitle">
       To add desired products to the cart, simply drag a product image to the
@@ -20,7 +20,7 @@ const Shop = () => (
         <ShopItem key={i} item={item} />
       ))}
     </section>
-  </main>
+  </div>
 );
 
 export default Shop;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router } from '@reach/router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Drag and Drop: Dnd api
 import { DndProvider } from 'react-dnd';
@@ -13,10 +13,14 @@ import Header from '../header';
 import Shop from '../shop';
 import Footer from '../footer';
 
-// Data
-
+/**
+ * Not Found component: Fallback component when a route does not render.
+ * @component
+ */
 const NotFound = () => (
-  <h1>This developer site does not support that url address.</h1>
+  <h1 style={{ padding: '0 5rem', color: '#d33169' }}>
+    This developer site does not support that url address.
+  </h1>
 );
 
 /** App is the root, parent component that represents the starting point of the front-end application
@@ -25,12 +29,22 @@ const NotFound = () => (
 const App = () => (
   // DndProvider: The Drag and Drop library provider that determines which api (touch or desktop) should be used.
   <DndProvider backend={Backend}>
-    <div className="app">
-      <Header />
-      {/* TODO: Try adding back in the routing */}
-      <Shop path="/" />
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <main>
+          <Switch>
+            <Route exact path="/">
+              <Shop />
+            </Route>
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   </DndProvider>
 );
 

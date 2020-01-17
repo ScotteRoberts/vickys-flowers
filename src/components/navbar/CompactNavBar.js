@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 import './CompactNavBar.css';
+
+// Images
+const storeLogo = require('../../assets/img/page-1.svg');
 
 /**
  * Responsive NavBar
@@ -23,11 +26,7 @@ const CompactNavBar = () => {
       </div>
 
       <Link className="store-icon-container" to="/">
-        <img
-          className="icon"
-          src={require('../../assets/img/page-1.svg')}
-          alt="Vicky's Flowers icon"
-        />
+        <img className="icon" src={storeLogo} alt="Vicky's Flowers icon" />
       </Link>
     </nav>
   );

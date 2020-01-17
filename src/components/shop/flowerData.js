@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /**
  * Data packet to ensure consistency of object type.
  * An alternative could be to make a class and construct objects.
@@ -52,3 +53,4 @@ export default {
     },
   },
 };
+/* eslint-enable global-require */

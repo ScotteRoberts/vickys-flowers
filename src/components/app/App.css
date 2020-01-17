@@ -5,3 +5,14 @@
 
   min-height: 100vh;
 }
+
+.app main {
+  /* Display */
+  flex-grow: 1;
+
+  /* Box */
+  padding-top: 3.5rem;
+
+  /* Other */
+  background-color: #bdbdbd;
+}

@@ -4,10 +4,14 @@ import { useMediaQuery } from 'react-responsive';
 import { useDrop } from 'react-dnd';
 import './Cart.css';
 
+// Images
+const cartImage = require('../../assets/img/page-1-2.svg');
+
 /**
  * Detailed Description on the cart details. Designed to fit in the header.
  * @param {*} props Properties
  * @param {Number} props.totalAmount Shopping cart total in $
+ * @component
  */
 const CartDecription = ({ totalAmount }) => (
   <div>
@@ -23,6 +27,7 @@ CartDecription.propTypes = {
  * Compact Description on the cart details. Designed to fit in a smaller header.
  * @param {*} props Properties
  * @param {Number} props.totalAmount Shopping cart total in $
+ * @component
  */
 const CompactCartDescription = ({ totalAmount }) => (
   <div>
@@ -46,19 +51,19 @@ const cartItemSize = numItems => {
       left: '18px',
       top: '13px',
     };
-  } else if (numItems < 100) {
+  }
+  if (numItems < 100) {
     return {
       fontSize: '14px',
       left: '15px',
       top: '15px',
     };
-  } else {
-    return {
-      fontSize: '12px',
-      left: '13px',
-      top: '16px',
-    };
   }
+  return {
+    fontSize: '12px',
+    left: '13px',
+    top: '16px',
+  };
 };
 
 /**
@@ -90,11 +95,7 @@ const Cart = () => {
       {/* DEV: An overlaid container that has the shopping cart details stacked */}
       <div className="cart-icon-container" ref={drop}>
         <div className={`drop-target${canDrop ? ' droppable' : ''}`} />
-        <img
-          src={require('../../assets/img/page-1-2.svg')}
-          alt="Shopping Cart Icon"
-          className="cart-icon"
-        />
+        <img src={cartImage} alt="Shopping Cart Icon" className="cart-icon" />
         {/* DEV: Applies number sizing dynamically */}
         <span className="total-items" style={cartItemSize(totalItems)}>
           {totalItems}

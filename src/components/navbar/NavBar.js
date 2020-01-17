@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
+
+// Images
+const storeLogo = require('../../assets/img/page-1.svg');
 
 const NavBar = () => (
   <nav className="nav-bar">
     {/* TODO: Make the Icon fit the container */}
     <Link className="store-icon-container" to="/">
-      <img
-        className="icon"
-        src={require('../../assets/img/page-1.svg')}
-        alt="Vicky's Flowers icon"
-      />
+      <img className="icon" src={storeLogo} alt="Vicky's Flowers icon" />
     </Link>
     <Link to="/">HOME</Link>
     <Link to="/about">ABOUT US</Link>
