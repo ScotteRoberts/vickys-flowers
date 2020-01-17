@@ -1,11 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Shop.css';
 
-import flowerItems from '../../data/flowerItems.js';
+import flowerItems from './flowerData.js';
 import ShopItem from '../shop-item';
 
-const Shop = props => (
+/**
+ * Shop component: Displays list of shop items
+ * @component
+ */
+const Shop = () => (
   <main className="shop">
     <h1 className="title">Top Products</h1>
     <p className="subtitle">
@@ -19,7 +22,5 @@ const Shop = props => (
     </section>
   </main>
 );
-
-Shop.propTypes = {};
 
 export default Shop;

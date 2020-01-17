@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { Link } from '@reach/router';
 import './CompactNavBar.css';
 
+/**
+ * Responsive NavBar
+ * @component
+ */
 const CompactNavBar = () => {
   const [active, setActive] = useState(false);
   return (
@@ -13,7 +17,7 @@ const CompactNavBar = () => {
         <nav className={`responsive-nav-items${active ? ' active' : ''}`}>
           <Link to="/">HOME</Link>
           <Link to="/about">ABOUT US</Link>
-          <Link to="/occasions">OCCASSIONS</Link>
+          <Link to="/occasions">OCCASIONS</Link>
           <Link to="/order">ORDER</Link>
         </nav>
       </div>

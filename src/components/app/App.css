@@ -1,10 +1,7 @@
 .app {
-  /* Provides the three row layout for the page */
+  /* Provides the row layout for the page */
   display: flex;
   flex-flow: column;
-  min-height: 100vh;
-}
 
-.app__main {
-  flex-grow: 1;
+  min-height: 100vh;
 }

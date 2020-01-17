@@ -8,20 +8,15 @@
 }
 
 .nav-bar a {
+  /* Box */
   margin: 0 2rem 0 0;
 
+  /* Other */
   text-decoration: none;
-
   color: #ffffff;
   font-weight: 600;
 }
 
 .nav-bar a:hover {
   text-decoration: underline;
-}
-
-@media only screen and (max-width: 600px) {
-}
-
-@media only screen and (max-width: 400px) {
 }

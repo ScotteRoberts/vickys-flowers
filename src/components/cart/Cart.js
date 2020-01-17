@@ -5,6 +5,35 @@ import { useDrop } from 'react-dnd';
 import './Cart.css';
 
 /**
+ * Detailed Description on the cart details. Designed to fit in the header.
+ * @param {*} props Properties
+ * @param {Number} props.totalAmount Shopping cart total in $
+ */
+const CartDecription = ({ totalAmount }) => (
+  <div>
+    TOTAL AMOUNT: <span>${totalAmount.toFixed(2)}</span>
+    <span className="tabbed-vertical-separator">|</span>
+  </div>
+);
+CartDecription.propTypes = {
+  totalAmount: PropTypes.number.isRequired,
+};
+
+/**
+ * Compact Description on the cart details. Designed to fit in a smaller header.
+ * @param {*} props Properties
+ * @param {Number} props.totalAmount Shopping cart total in $
+ */
+const CompactCartDescription = ({ totalAmount }) => (
+  <div>
+    TOTAL: <span>${totalAmount.toFixed(2)}</span>
+  </div>
+);
+CompactCartDescription.propTypes = {
+  totalAmount: PropTypes.number.isRequired,
+};
+
+/**
  * Dynamically returns an object of style properties based on the number of cart items.
  * @warning Relies on the icon being the same size
  * @param {Number} numItems The number of cart items
@@ -32,28 +61,18 @@ const cartItemSize = numItems => {
   }
 };
 
-const CartDecription = ({ totalAmount }) => (
-  <div>
-    TOTAL AMOUNT: <span>${totalAmount.toFixed(2)}</span>
-    <span className="tabbed-vertical-separator">|</span>
-  </div>
-);
-
-const CompactCartDescription = ({ totalAmount }) => (
-  <div>
-    TOTAL: <span>${totalAmount.toFixed(2)}</span>
-  </div>
-);
-
+/**
+ * Minimal shopping cart component
+ * @component
+ */
 const Cart = () => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [{ canDrop }, drop] = useDrop({
     accept: 'flower',
+    // DEV: On a successful drop, update the price and quantity
     drop: item => {
-      console.log(item);
       setTotalAmount(totalAmount + item.price * item.quantity);
-      console.log(totalAmount);
       setTotalItems(totalItems + item.quantity);
     },
     collect: monitor => ({ canDrop: !!monitor.canDrop() }),
@@ -68,13 +87,15 @@ const Cart = () => {
         <CartDecription totalAmount={totalAmount} />
       )}
 
+      {/* DEV: An overlaid container that has the shopping cart details stacked */}
       <div className="cart-icon-container" ref={drop}>
         <div className={`drop-target${canDrop ? ' droppable' : ''}`} />
         <img
           src={require('../../assets/img/page-1-2.svg')}
-          alt="Cart icon"
+          alt="Shopping Cart Icon"
           className="cart-icon"
         />
+        {/* DEV: Applies number sizing dynamically */}
         <span className="total-items" style={cartItemSize(totalItems)}>
           {totalItems}
         </span>
@@ -82,8 +103,5 @@ const Cart = () => {
     </div>
   );
 };
-
-//FIXME: Setup propTypes
-Cart.propTypes = {};
 
 export default Cart;

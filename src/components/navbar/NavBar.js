@@ -4,7 +4,7 @@ import './NavBar.css';
 
 const NavBar = () => (
   <nav className="nav-bar">
-    {/* TODO: Get back to making this responsive */}
+    {/* TODO: Make the Icon fit the container */}
     <Link className="store-icon-container" to="/">
       <img
         className="icon"
@@ -14,7 +14,7 @@ const NavBar = () => (
     </Link>
     <Link to="/">HOME</Link>
     <Link to="/about">ABOUT US</Link>
-    <Link to="/occasions">OCCASSIONS</Link>
+    <Link to="/occasions">OCCASIONS</Link>
     <Link to="/order">ORDER</Link>
   </nav>
 );

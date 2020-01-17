@@ -13,6 +13,8 @@ import Header from '../header';
 import Shop from '../shop';
 import Footer from '../footer';
 
+// Data
+
 const NotFound = () => (
   <h1>This developer site does not support that url address.</h1>
 );
@@ -21,9 +23,11 @@ const NotFound = () => (
  * @component
  */
 const App = () => (
+  // DndProvider: The Drag and Drop library provider that determines which api (touch or desktop) should be used.
   <DndProvider backend={Backend}>
     <div className="app">
       <Header />
+      {/* TODO: Try adding back in the routing */}
       <Shop path="/" />
       <Footer />
     </div>

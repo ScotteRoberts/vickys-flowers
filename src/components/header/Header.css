@@ -1,15 +1,20 @@
 .header {
-  position: fixed;
-  padding: 0.25rem 5rem;
-  width: calc(100vw - 10rem);
-
+  /* Display */
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  /* Box */
+  position: fixed;
+  width: calc(100vw - 10rem);
+  padding: 0.25rem 5rem;
+
+  /* Other */
   color: #ffffff;
   background-color: #28425a;
 }
+
+/* ================= Media Queries ==================== */
 
 @media only screen and (max-width: 600px) {
   .header {

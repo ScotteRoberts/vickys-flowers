@@ -1,33 +1,44 @@
 /* FIXME: Check this whole file later */
 
 .footer {
-  padding: 46px 5rem 27px 5rem;
-
+  /* Display Info */
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 
+  /* Box model */
+  padding: 46px 5rem 27px 5rem;
+
+  /* Other */
   text-align: center;
   background-color: #28425a;
 }
 
 .footer nav {
+  /* Display Info */
   display: flex;
   flex-flow: column;
+
+  /* Box model */
   margin: 0 4rem;
 }
 
 .footer nav h3 {
-  font-size: 1rem;
+  /* Box model */
   margin: 0 0 1rem 0;
+
+  /* Other */
+  font-size: 1rem;
   color: #d33169;
 }
 
 /* HACK: This is a bit of a hack to grab the 'a' tag... consider making a custom component */
 .footer nav a {
-  font-size: 0.875rem;
+  /* Box */
   margin: 0 0 1rem 0;
 
+  /* Other */
+  font-size: 0.875rem;
   text-decoration: none;
   color: #ffffff;
 }
@@ -35,6 +46,8 @@
 .footer nav a:hover {
   text-decoration: underline;
 }
+
+/* ================= Media Queries ===================== */
 
 @media only screen and (max-width: 600px) {
   .footer {

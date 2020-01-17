@@ -3,10 +3,22 @@ import PropTypes from 'prop-types';
 import { useDrag } from 'react-dnd';
 import './ShopItem.css';
 
+/** Array of Integers from 1 - 20 */
 const itemQuantities = [...Array(21).keys()].slice(1);
 
+/**
+ * Generates a random number between/including min and max
+ * @param {Number} min minimum value (included)
+ * @param {Number} max maximum value (included)
+ * @returns an integer
+ */
 const getRandomInt = (min, max) => Math.floor(Math.random() * max + min);
 
+/**
+ * ShopItem component: Card-like representation of a single shop item
+ * @param {*} props properties
+ * @param {Object} props.item Shopping item details
+ */
 const ShopItem = ({ item }) => {
   const { title, image, price } = item;
   const [currQuantity, setCurrQuantity] = useState(getRandomInt(1, 20));

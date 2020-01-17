@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from '@reach/router';
 import './Footer.css';
 
+/**
+ * Footer component: contains navigation links
+ * @component
+ */
 const Footer = () => (
   <footer className="footer">
     <nav>

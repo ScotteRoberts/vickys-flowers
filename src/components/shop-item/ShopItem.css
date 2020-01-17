@@ -2,30 +2,31 @@
   margin: 2rem 0.5rem;
 }
 
-.shop-item > * {
-  text-align: center;
-}
-
 .shop-item .item-title {
   color: #4a4a4a;
+  text-align: center;
   font-size: 1.07rem;
   font-weight: 600;
 }
 
 .shop-item .item-price {
   color: #d33169;
+  text-align: center;
   font-weight: 700;
 }
 
 .shop-item .item-quantity {
-  appearance: none;
-  -ms-appearance: none;
-
+  /* Display */
   display: block;
+
+  /* Box */
   width: 75px;
   height: 30px;
   margin: 0 auto;
   padding: 0.25rem 0.5rem 0.25rem 1rem;
+
+  /* Style reset for the select box */
+  appearance: none;
 
   border: solid 1px #24435a;
   border-radius: 0;
