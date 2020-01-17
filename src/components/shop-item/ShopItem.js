@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDrag, DragPreviewImage } from 'react-dnd';
 import './ShopItem.css';
@@ -7,22 +7,17 @@ import './ShopItem.css';
 const itemQuantities = [...Array(21).keys()].slice(1);
 
 /**
- * Generates a random number between/including min and max
- * @param {Number} min minimum value (included)
- * @param {Number} max maximum value (included)
- * @returns an integer
- */
-const getRandomInt = (min, max) => Math.floor(Math.random() * max + min);
-
-/**
  * ShopItem component: Card-like representation of a single shop item
  * @param {*} props properties
  * @param {Object} props.item Shopping item details
  * @component
  */
-const ShopItem = ({ item }) => {
-  const { title, image, price } = item;
-  const [currQuantity, setCurrQuantity] = useState(getRandomInt(1, 20));
+const ShopItem = ({ item, handleQuantityRandomization }) => {
+  const { title, image, price, quantity } = item;
+  const [currQuantity, setCurrQuantity] = useState(quantity);
+  console.log(currQuantity);
+
+  useEffect(() => setCurrQuantity(quantity), [quantity]);
 
   // DEV: Dragging hook to monitor the draggable item
   const [, dragRef, preview] = useDrag({
@@ -30,7 +25,7 @@ const ShopItem = ({ item }) => {
     end: (_, monitor) => {
       // Drop was successful, randomize the next quantity for the drop...
       if (monitor.didDrop()) {
-        setCurrQuantity(getRandomInt(1, 20));
+        handleQuantityRandomization();
       }
     },
   });
@@ -54,9 +49,9 @@ const ShopItem = ({ item }) => {
         className="item-quantity"
       >
         {/* DEV: Dynamically populate the number of options */}
-        {itemQuantities.map(quantity => (
-          <option key={quantity} value={quantity}>
-            {quantity}
+        {itemQuantities.map(itemQuantity => (
+          <option key={itemQuantity} value={itemQuantity}>
+            {itemQuantity}
           </option>
         ))}
       </select>
@@ -74,6 +69,7 @@ ShopItem.propTypes = {
       alt: PropTypes.string,
     }).isRequired,
   }).isRequired,
+  handleQuantityRandomization: PropTypes.func.isRequired,
 };
 
 export default ShopItem;
