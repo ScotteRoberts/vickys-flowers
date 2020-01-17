@@ -20,3 +20,7 @@
 .nav-bar a:hover {
   text-decoration: underline;
 }
+
+.nav-bar .selected {
+  color: #86ebb9;
+}

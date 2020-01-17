@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './NavBar.css';
 
 // Images
@@ -8,13 +8,21 @@ const storeLogo = require('../../assets/img/page-1.svg');
 const NavBar = () => (
   <nav className="nav-bar">
     {/* TODO: Make the Icon fit the container */}
-    <Link className="store-icon-container" to="/">
+    <NavLink className="store-icon-container" to="/">
       <img className="icon" src={storeLogo} alt="Vicky's Flowers icon" />
-    </Link>
-    <Link to="/">HOME</Link>
-    <Link to="/about">ABOUT US</Link>
-    <Link to="/occasions">OCCASIONS</Link>
-    <Link to="/order">ORDER</Link>
+    </NavLink>
+    <NavLink exact to="/" activeClassName="selected">
+      HOME
+    </NavLink>
+    <NavLink to="/about" activeClassName="selected">
+      ABOUT US
+    </NavLink>
+    <NavLink to="/occasions" activeClassName="selected">
+      OCCASIONS
+    </NavLink>
+    <NavLink to="/order" activeClassName="selected">
+      ORDER
+    </NavLink>
   </nav>
 );
 

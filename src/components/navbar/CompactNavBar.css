@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.responsive-nav-items-container {
+  position: relative;
+
+  /* overflow: hidden; */
+}
+
 .nav-icon-button {
   background: none;
   border: none;
@@ -12,10 +18,7 @@
   font-size: 2.5rem;
   color: white;
   vertical-align: middle;
-}
-
-.responsive-nav-items-container {
-  position: relative;
+  transform: translateY(-0.4rem);
 }
 
 .responsive-nav-items {
@@ -24,7 +27,6 @@
 
 .responsive-nav-items.active {
   position: absolute;
-
   display: flex;
   flex-flow: column;
 }
@@ -54,6 +56,10 @@
 
 .compact-nav-bar a:hover {
   text-decoration: underline;
+}
+
+.compact-nav-bar .selected {
+  color: #86ebb9;
 }
 
 @media only screen and (max-width: 600px) {
