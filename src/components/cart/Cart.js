@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
 import { useDrop } from 'react-dnd';
 import './Cart.css';
 
@@ -31,8 +32,20 @@ const cartItemSize = numItems => {
   }
 };
 
-const Cart = props => {
-  // FIXME: Figure out how to set this to decimal formatting
+const CartDecription = ({ totalAmount }) => (
+  <div>
+    TOTAL AMOUNT: <span>${totalAmount.toFixed(2)}</span>
+    <span className="tabbed-vertical-separator">|</span>
+  </div>
+);
+
+const CompactCartDescription = ({ totalAmount }) => (
+  <div>
+    TOTAL: <span>${totalAmount.toFixed(2)}</span>
+  </div>
+);
+
+const Cart = () => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
   const [{ canDrop }, drop] = useDrop({
@@ -45,14 +58,16 @@ const Cart = props => {
     },
     collect: monitor => ({ canDrop: !!monitor.canDrop() }),
   });
+  const isCompact = useMediaQuery({ query: '(max-width: 500px)' });
 
   return (
     <div className="cart">
-      <div>
-        TOTAL AMOUNT: $<span>{totalAmount.toFixed(2)}</span>
-        <span className="tabbed-vertical-separator">|</span>
-      </div>
-      {/* FIXME: Change the drop target to the div later */}
+      {isCompact ? (
+        <CompactCartDescription totalAmount={totalAmount} />
+      ) : (
+        <CartDecription totalAmount={totalAmount} />
+      )}
+
       <div className="cart-icon-container" ref={drop}>
         <div className={`drop-target${canDrop ? ' droppable' : ''}`} />
         <img
