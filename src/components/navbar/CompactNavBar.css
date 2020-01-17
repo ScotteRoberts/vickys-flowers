@@ -1,4 +1,3 @@
-/* FIXME: Get back to this file and clean up unnecessary queries */
 .compact-nav-bar {
   display: flex;
   align-items: center;
@@ -6,15 +5,15 @@
 
 .responsive-nav-items-container {
   position: relative;
-
-  /* overflow: hidden; */
 }
 
 .nav-icon-button {
+  /* Button Resets */
   background: none;
   border: none;
   outline: none;
 
+  /* Adjusting size and height of the hamburger icon */
   font-size: 2.5rem;
   color: white;
   vertical-align: middle;
@@ -60,10 +59,4 @@
 
 .compact-nav-bar .selected {
   color: #86ebb9;
-}
-
-@media only screen and (max-width: 600px) {
-}
-
-@media only screen and (max-width: 400px) {
 }

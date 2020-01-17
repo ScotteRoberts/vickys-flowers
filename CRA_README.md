@@ -1,5 +1,7 @@
 # Create React App
 
+**This document has been modified from the original Create React App README to serve the purpose of this application.**
+
 Before starting to develop on the project, please:
 
 1. Clone this repository locally
@@ -21,6 +23,16 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `npm run lint`
+
+Runs ESLint and uses the `.eslintrc.js` rules to lint the source code. Provides errors in the console to fix manually.
+
+### `npm run docs`
+
+**Note**: This script is untested and serves as a possible avenue for providing visual documentation. These documents are not hosted anywhere and will generate in this project directory under the `/doc` folder.
+
+Creates a template set of documentation by utilizing `jsdoc` style documentation
 
 ### `npm run build`
 
