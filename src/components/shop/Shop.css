@@ -1,5 +1,5 @@
 .shop {
-  padding: 4rem 5rem 0 5rem;
+  padding: 3.5rem 5rem 0 5rem;
   flex-grow: 1;
   /* FIXME: Change me later */
   background-color: #bdbdbd;
@@ -18,4 +18,16 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .shop {
+    padding: 3.5rem 2rem 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .shop {
+    padding: 3.5rem 1rem 0 1rem;
+  }
 }
