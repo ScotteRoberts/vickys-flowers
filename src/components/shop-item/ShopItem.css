@@ -19,6 +19,7 @@
 
 .shop-item .item-quantity {
   appearance: none;
+  -ms-appearance: none;
 
   display: block;
   width: 75px;
@@ -32,4 +33,9 @@
 
   font-family: 'Raleway', sans-serif;
   font-size: 0.8rem;
+}
+
+/* IE Removal of expand arrow */
+.shop-item .item-quantity::-ms-expand {
+  display: none;
 }
