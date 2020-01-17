@@ -1,4 +1,4 @@
-import 'core-js/stable';
+import 'core-js/stable'; // Provides polyfills for IE 11
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './main.css';
