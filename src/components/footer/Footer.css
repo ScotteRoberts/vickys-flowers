@@ -4,7 +4,7 @@
   padding: 46px 5rem 27px 5rem;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex-wrap: wrap;
 
   text-align: center;
@@ -14,7 +14,7 @@
 .footer nav {
   display: flex;
   flex-flow: column;
-  margin: 0 1rem;
+  margin: 0 4rem;
 }
 
 .footer nav h3 {
@@ -34,4 +34,22 @@
 
 .footer nav a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    padding: 46px 2rem 27px 2rem;
+  }
+  .footer nav {
+    margin: 0 4rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .footer {
+    padding: 46px 1rem 27px 1rem;
+  }
+  .footer nav {
+    margin: 0 2rem;
+  }
 }

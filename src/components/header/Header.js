@@ -1,29 +1,20 @@
-import React from 'react';
-import { Link } from '@reach/router';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useMediaQuery } from 'react-responsive';
 import './Header.css';
 
-import Cart from '../cart';
+import { Cart } from '../cart';
+import { NavBar, CompactNavBar } from '../navbar';
 
-const Header = props => (
-  <header className="header">
-    <nav>
-      {/* TODO: Get back to making this responsive */}
-      <Link className="store-icon-container" to="/">
-        <img
-          className="icon"
-          src={require('../../assets/img/page-1.svg')}
-          alt="Vicky's Flowers icon"
-        />
-      </Link>
-      <Link to="/">HOME</Link>
-      <Link to="/about">ABOUT US</Link>
-      <Link to="/occasions">OCCASSIONS</Link>
-      <Link to="/order">ORDER</Link>
-    </nav>
-    <Cart />
-  </header>
-);
+const Header = props => {
+  const isCompact = useMediaQuery({ query: '(max-width: 1000px)' });
+  return (
+    <header className="header">
+      {isCompact ? <CompactNavBar /> : <NavBar />}
+      <Cart />
+    </header>
+  );
+};
 
 Header.propTypes = {};
 
